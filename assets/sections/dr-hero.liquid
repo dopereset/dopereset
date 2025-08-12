@@ -1,0 +1,29 @@
+<section class="section">
+  <div class="container hero">
+    {% if section.settings.badge != blank %}
+      <span class="badge tag">{{ section.settings.badge }}</span>
+    {% endif %}
+    <h1 class="h1">{{ section.settings.heading }}</h1>
+    <p class="p" style="max-width:720px; margin-top:12px">{{ section.settings.subtext }}</p>
+    <div class="actions">
+      <a href="{{ section.settings.primary_link }}" class="btn btn--am">{{ section.settings.primary_label }}</a>
+      <a href="{{ section.settings.secondary_link }}" class="btn btn--pm">{{ section.settings.secondary_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DopeReset Hero",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Badge", "default": "Reset your day. Reset your night." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "DopeReset — AM Focus, PM Recovery." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Clinically dosed powders designed for clean morning energy and deep night recovery." },
+    { "type": "url", "id": "primary_link", "label": "Primary link" },
+    { "type": "text", "id": "primary_label", "label": "Primary label", "default": "Shop AM" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary label", "default": "Shop PM" }
+  ],
+  "presets": [{ "name": "DopeReset Hero" }]
+}
+{% endschema %}
