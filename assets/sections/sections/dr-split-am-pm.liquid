@@ -1,0 +1,34 @@
+<section class="section">
+  <div class="container split">
+    <div class="panel panel--am">
+      <h3>{{ section.settings.am_heading }}</h3>
+      <p>{{ section.settings.am_text }}</p>
+      <div style="margin-top:16px">
+        <a href="{{ section.settings.am_link }}" class="btn" style="background:#fff;color:#111;border-color:#fff">Explore AM</a>
+      </div>
+    </div>
+    <div class="panel panel--pm">
+      <h3>{{ section.settings.pm_heading }}</h3>
+      <p>{{ section.settings.pm_text }}</p>
+      <div style="margin-top:16px">
+        <a href="{{ section.settings.pm_link }}" class="btn" style="background:#fff;color:#111;border-color:#fff">Explore PM</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AM/PM Split",
+  "settings": [
+    { "type": "text", "id": "am_heading", "label": "AM heading", "default": "AM — Focus & Flow" },
+    { "type": "textarea", "id": "am_text", "label": "AM text", "default": "Clean energy, focus, and hydration without the crash." },
+    { "type": "url", "id": "am_link", "label": "AM link" },
+
+    { "type": "text", "id": "pm_heading", "label": "PM heading", "default": "PM — Deep Recharge" },
+    { "type": "textarea", "id": "pm_text", "label": "PM text", "default": "Relaxation and recovery while you sleep." },
+    { "type": "url", "id": "pm_link", "label": "PM link" }
+  ],
+  "presets": [{ "name": "AM/PM Split" }]
+}
+{% endschema %}
